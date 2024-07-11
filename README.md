@@ -15,7 +15,7 @@ This project demonstrates how to integrate Firebase Authentication with the Refi
 ### Installation
 
 1. **Clone the repository:**
-   ```
+   ```bash
    git clone https://github.com/godleader/refine-firebase.git
    cd refine-firebase
    ```
