@@ -1,93 +1,91 @@
 ```markdown
-# Firebase Auth Integration with Refine
+# Firebase Authentication Provider
 
-This project demonstrates how to integrate Firebase Authentication with the Refine framework. It provides functionalities for user registration, login, logout, password reset, and profile updates using Firebase Auth.
+This repository contains an implementation of a Firebase Authentication Provider for a React application using the Refine framework.
 
-## Setup
+## Features
 
-### Prerequisites
-- Node.js
-- Firebase project
-- Refine project
+- User login with email and password
+- User registration with email, password, and display name
+- Password reset functionality
+- Persistent login sessions
+- User profile updates
+- Email verification after registration
 
-### Installation
+## Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/godleader/refine-firebase.git
-   cd refine-firebase
-   ```
+1. Clone the repository:
 
-2. **Installation**
    ```sh
-    npm install refine-firebase
-    ```
-   
-
-3. **Configure Firebase:**
-   Create a `firebaseConfig.ts` file in the `src` directory and add your Firebase configuration:
-   ```typescript
-   import { initializeApp } from "firebase/app";
-   import { getAuth } from "firebase/auth";
-
-   const firebaseConfig = {
-     apiKey: "YOUR_API_KEY",
-     authDomain: "YOUR_AUTH_DOMAIN",
-     projectId: "YOUR_PROJECT_ID",
-     storageBucket: "YOUR_STORAGE_BUCKET",
-     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-     appId: "YOUR_APP_ID",
-     databaseURL: "YOUR_DATABASE_URL"
-   };
-
-   const app = initializeApp(firebaseConfig);
-   const auth = getAuth(app);
-
-   export { app, auth };
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
    ```
 
-4. **Run the application:**
-   ```bash
-   npm start
+2. Install the dependencies:
+
+   ```sh
+   npm install
    ```
+
+3. Set up your Firebase project:
+
+   - Go to the [Firebase Console](https://console.firebase.google.com/).
+   - Create a new project or use an existing one.
+   - Go to the Project Settings and add a new web app.
+   - Copy the Firebase configuration and replace the placeholder in `firebaseConfig.ts`.
+
+4. Configure Firebase Authentication:
+
+   - Enable Email/Password authentication in the Firebase Console under Authentication > Sign-in method.
 
 ## Usage
 
-### FirebaseAuth Class
+1. Import the `FirebaseAuth` class and set up your authentication provider:
 
-This class provides methods to handle various authentication tasks:
-- `handleLogIn`
-- `handleLogOut`
-- `handleRegister`
-- `handleResetPassword`
-- `handleForgotPassword`
-- `handleUpdatePassword`
-- `getUserIdentity`
-- `handleCheckAuth`
-- `getPermissions`
-- `createRecaptcha`
-- `getFirebaseUser`
+   ```typescript
+   import { FirebaseAuth } from "./firebaseauth";
+   import { authProvider } from "./authProvider";
 
-### AuthProvider
+   const firebaseAuth = new FirebaseAuth();
+   const authProvider = firebaseAuth.getAuthProvider();
+   ```
 
-The `AuthProvider` uses the `FirebaseAuth` class to implement the following methods:
-- `login`
-- `logout`
-- `register`
-- `forgotPassword`
-- `updatePassword`
-- `getPermissions`
-- `getIdentity`
-- `check`
-- `onError`
+2. Use the authentication provider in your application:
+
+   ```typescript
+   import { Refine } from "@refinedev/core";
+   import { authProvider } from "./authProvider";
+
+   function App() {
+     return (
+       <Refine authProvider={authProvider}>
+         {/* Your app components */}
+       </Refine>
+     );
+   }
+   ```
+
+## FirebaseAuth Class
+
+The `FirebaseAuth` class provides methods to handle various authentication tasks:
+
+- `handleLogIn`: Logs in a user with email and password.
+- `handleRegister`: Registers a new user with email, password, and optional display name.
+- `handleLogOut`: Logs out the current user.
+- `handleResetPassword`: Sends a password reset email.
+- `handleUpdatePassword`: Updates the current user's password.
+- `handleForgotPassword`: Sends a password reset email.
+- `getUserIdentity`: Returns the current user's email and display name.
+- `handleCheckAuth`: Checks if a user is authenticated.
+- `getPermissions`: Returns the user's permissions.
 
 ## Contributing
 
-Feel free to contribute to this project by submitting a pull request or opening an issue.
+Contributions are welcome! Please open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ```
 
-This README provides a clear overview of the project setup, usage, and contributing guidelines. Make sure to replace placeholders like `YOUR_API_KEY` with your actual Firebase configuration values.
+Replace `"https://github.com/your-username/your-repo.git"` with the actual URL of your repository. This `README.md` provides a clear and detailed overview of your project, its features, installation steps, usage, and information about contributing and licensing.
