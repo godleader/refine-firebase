@@ -14,27 +14,21 @@ This repository contains an implementation of a Firebase Authentication Provider
 
 ## Installation
 
-1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
-   ```
-
-2. Install the dependencies:
+1. Install the dependencies:
 
    ```sh
    npm install
    ```
 
-3. Set up your Firebase project:
+2. Set up your Firebase project:
 
    - Go to the [Firebase Console](https://console.firebase.google.com/).
    - Create a new project or use an existing one.
    - Go to the Project Settings and add a new web app.
    - Copy the Firebase configuration and replace the placeholder in `firebaseConfig.ts`.
 
-4. Configure Firebase Authentication:
+3. Configure Firebase Authentication:
 
    - Enable Email/Password authentication in the Firebase Console under Authentication > Sign-in method.
 
@@ -88,4 +82,3 @@ Contributions are welcome! Please open an issue or submit a pull request.
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ```
 
-Replace `"https://github.com/your-username/your-repo.git"` with the actual URL of your repository. This `README.md` provides a clear and detailed overview of your project, its features, installation steps, usage, and information about contributing and licensing.
