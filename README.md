@@ -1,5 +1,3 @@
-Sure, here’s a `README.md` for your project:
-
 ```markdown
 # Firebase Auth Integration with Refine
 
