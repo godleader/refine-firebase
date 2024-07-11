@@ -1,6 +1,6 @@
-```markdown
-# Firebase Authentication Provider
-
+### 
+# Refine framework Firebase Authentication Provider
+### 
 This repository contains an implementation of a Firebase Authentication Provider for a React application using the Refine framework.
 
 ## Features
@@ -17,7 +17,7 @@ This repository contains an implementation of a Firebase Authentication Provider
 
 1. Install the dependencies:
 
-   ```sh
+   ```
    npm install
    ```
 
